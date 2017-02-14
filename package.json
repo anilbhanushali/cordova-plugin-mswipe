@@ -1,0 +1,11 @@
+{
+  "name": "cordova-plugin-mswipe",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-mswipe",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "MSwipe Card Reader Plugin"
+}

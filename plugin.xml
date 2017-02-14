@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-mswipe"
+    version="1.0.0">
+    <name>MSwipe Cordova Plugin</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/anilbhanushali/cordova-plugin-mswipe</repo>
+    <issue>https://github.com/anilbhanushali/cordova-plugin-mswipe/issues</issue>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+        <clobbers target="MSwipe" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="MSwipePlugin">
+          <param name="android-package" value="com.betterlife.MSwipePlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/betterlife/MSwipePlugin.java" target-dir="src/com/betterlife/" />
+      <source-file src="src/android/libs/mswipewisepadapkkit.aar" target-dir="libs" />
+      <framework src="src/android/mswipe.gradle" custom="true" type="gradleReference" />
+    </platform>
+</plugin>
