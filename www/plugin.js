@@ -3,13 +3,17 @@ var exec = require('cordova/exec');
 
 var PLUGIN_NAME = 'MSwipePlugin';
 
-var MSwipePlugin = {
-  echo: function(phrase, cb) {
-    exec(cb, null, PLUGIN_NAME, 'echo', [phrase]);
-  },
-  getDate: function(cb) {
-    exec(cb, null, PLUGIN_NAME, 'getDate', []);
-  }
-};
+var exec = require('cordova/exec');
 
-module.exports = MSwipePlugin;
+exports.cardPayment = function(amount,orderid,username,password,mobilenumber,appuser,productionCheck, success, error) {
+	var arg = {
+		"amount":amount,
+		"orderid":orderid,
+		"username":username,
+		"password":password,
+		"mobilenumber":mobilenumber,
+		"appuser":appuser,
+		"productionCheck":productionCheck
+	}
+    exec(success, error, PLUGIN_NAME, "cardPayment", [arg]);
+};

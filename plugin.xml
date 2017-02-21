@@ -25,7 +25,13 @@
         </feature>
       </config-file>
 
+      <config-file target="AndroidManifest.xml" parent="/manifest/application"> 
+        <activity android:label="MSwipeActivity" android:name="com.betterlife.MSwipeActivity">
+        </activity> 
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml"></config-file>
       <source-file src="src/android/com/betterlife/MSwipePlugin.java" target-dir="src/com/betterlife/" />
+      <source-file src="src/android/com/betterlife/MSwipeActivity.java" target-dir="src/com/betterlife/" />
       <source-file src="src/android/libs/mswipewisepadapkkit.aar" target-dir="libs" />
       <framework src="src/android/mswipe.gradle" custom="true" type="gradleReference" />
     </platform>
